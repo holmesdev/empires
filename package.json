@@ -1,0 +1,36 @@
+{
+    "name": "empires",
+    "version": "0.0.1",
+    "description": "Turn based strategy game.",
+    "main": "src/app.ts",
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "yarn copyAssets && rollup --config rollup.config.dist.js",
+        "build:dev": "yarn copyAssets && rollup --watch --config rollup.config.dev.js",
+        "copyAssets": "mkdir -p dist/assets && cp src/assets/* dist/assets",
+        "start": "http-server -o http://localhost:8080"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/holmesdev/empires.git"
+    },
+    "author": "Alex Holmes <alex@alexholmes.dev> (https://alexholmes.dev)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/holmesdev/empires/issues"
+    },
+    "homepage": "https://github.com/holmesdev/empires#readme",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-node-resolve": "^13.1.2",
+        "@rollup/plugin-replace": "^3.0.1",
+        "@rollup/plugin-typescript": "^8.3.0",
+        "http-server": "^14.0.0",
+        "phaser": "^3.55.2",
+        "rollup": "^2.62.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.4",
+        "uglify-js": "^3.14.5"
+    }
+}
